@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V3L-BB-5RW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="yYf-YD-4Uq">
+            <objects>
+                <viewController id="V3L-BB-5RW" customClass="HomeViewController" customModule="testCeiba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q2P-s8-ZqD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckb-Oj-6H7">
+                                <rect key="frame" x="0.0" y="107.5" width="414" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Buscar Nombre Usuario" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYD-uS-0mY">
+                                        <rect key="frame" x="10" y="5" width="351" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="BackgroundWelcomeColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="V3L-BB-5RW" id="SyU-CE-LYn"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxD-up-ghD">
+                                        <rect key="frame" x="361" y="5" width="48" height="40"/>
+                                        <color key="backgroundColor" name="subtitleHomeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="uAl-M2-t91"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="buscar"/>
+                                        <connections>
+                                            <action selector="findUser:" destination="V3L-BB-5RW" eventType="touchUpInside" id="RJE-s0-m8v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="WelcomeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7MW-WL-5JU"/>
+                                    <constraint firstAttribute="bottom" secondItem="gYD-uS-0mY" secondAttribute="bottom" constant="5" id="7cS-L2-BhQ"/>
+                                    <constraint firstItem="YxD-up-ghD" firstAttribute="top" secondItem="gYD-uS-0mY" secondAttribute="top" id="9zx-ea-Rya"/>
+                                    <constraint firstItem="gYD-uS-0mY" firstAttribute="top" secondItem="Ckb-Oj-6H7" secondAttribute="top" constant="5" id="gZz-LX-vUO"/>
+                                    <constraint firstItem="gYD-uS-0mY" firstAttribute="leading" secondItem="Ckb-Oj-6H7" secondAttribute="leading" constant="10" id="lGJ-a5-Ey0"/>
+                                    <constraint firstAttribute="trailing" secondItem="YxD-up-ghD" secondAttribute="trailing" constant="5" id="lOB-Zr-fvS"/>
+                                    <constraint firstItem="YxD-up-ghD" firstAttribute="bottom" secondItem="gYD-uS-0mY" secondAttribute="bottom" id="uPq-N9-H5b"/>
+                                    <constraint firstItem="YxD-up-ghD" firstAttribute="leading" secondItem="gYD-uS-0mY" secondAttribute="trailing" id="zcy-Ya-VRH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-m2-cEf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="63.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listado De Usuarios" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-Kt-Afb">
+                                        <rect key="frame" x="129.5" y="20" width="155" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kyz-Kt-Afb" firstAttribute="centerX" secondItem="Ofb-m2-cEf" secondAttribute="centerX" id="Abl-fN-I0M"/>
+                                    <constraint firstAttribute="bottom" secondItem="kyz-Kt-Afb" secondAttribute="bottom" constant="25" id="YS0-S3-nmo"/>
+                                    <constraint firstItem="kyz-Kt-Afb" firstAttribute="top" secondItem="Ofb-m2-cEf" secondAttribute="top" constant="20" id="kmJ-ih-lXW"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wmI-Oh-73W">
+                                <rect key="frame" x="0.0" y="157.5" width="414" height="718.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="V3L-BB-5RW" id="6dt-sU-fhY"/>
+                                    <outlet property="delegate" destination="V3L-BB-5RW" id="iT1-Dn-UZQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="BackgroundSearchColor"/>
+                        <constraints>
+                            <constraint firstItem="Ckb-Oj-6H7" firstAttribute="top" secondItem="Ofb-m2-cEf" secondAttribute="bottom" id="0Kf-pX-7s1"/>
+                            <constraint firstAttribute="trailing" secondItem="Ckb-Oj-6H7" secondAttribute="trailing" id="48H-QA-6MR"/>
+                            <constraint firstItem="Ofb-m2-cEf" firstAttribute="top" secondItem="mj2-3V-rIc" secondAttribute="top" id="61Y-GU-sNo"/>
+                            <constraint firstItem="wmI-Oh-73W" firstAttribute="leading" secondItem="mj2-3V-rIc" secondAttribute="leading" id="Ddx-YC-yGE"/>
+                            <constraint firstItem="mj2-3V-rIc" firstAttribute="trailing" secondItem="wmI-Oh-73W" secondAttribute="trailing" id="ZIq-sS-YHV"/>
+                            <constraint firstItem="mj2-3V-rIc" firstAttribute="trailing" secondItem="Ofb-m2-cEf" secondAttribute="trailing" id="fwz-hN-OI3"/>
+                            <constraint firstAttribute="bottom" secondItem="wmI-Oh-73W" secondAttribute="bottom" constant="20" id="jxE-iZ-3gW"/>
+                            <constraint firstItem="Ofb-m2-cEf" firstAttribute="leading" secondItem="mj2-3V-rIc" secondAttribute="leading" id="pdh-zs-nGF"/>
+                            <constraint firstItem="wmI-Oh-73W" firstAttribute="top" secondItem="Ckb-Oj-6H7" secondAttribute="bottom" id="tDE-Ha-qH6"/>
+                            <constraint firstItem="Ckb-Oj-6H7" firstAttribute="leading" secondItem="Q2P-s8-ZqD" secondAttribute="leading" id="znk-ov-ewQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mj2-3V-rIc"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableUsers" destination="wmI-Oh-73W" id="aPV-3O-nff"/>
+                        <outlet property="txtfdSearch" destination="gYD-uS-0mY" id="KfH-sq-PTB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rd9-Ua-8oG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="-35.491071428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buscar" width="27" height="26"/>
+        <namedColor name="BackgroundSearchColor">
+            <color red="0.60784313725490191" green="0.64313725490196083" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BackgroundWelcomeColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WelcomeColor">
+            <color red="0.078431372549019607" green="0.15294117647058825" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subtitleHomeColor">
+            <color red="0.22352941176470589" green="0.28235294117647058" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
