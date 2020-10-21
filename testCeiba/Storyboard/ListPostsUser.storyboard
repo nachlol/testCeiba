@@ -12,7 +12,6 @@
         <!--Navigation Controller-->
         <scene sceneID="50B-5s-RzY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W59-Ws-rlC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController modalPresentationStyle="fullScreen" id="nYk-Nf-5HR" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TAu-Zx-mOq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -26,6 +25,7 @@
                         <segue destination="Lui-Xc-zy9" kind="relationship" relationship="rootViewController" id="frX-p2-IoN"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W59-Ws-rlC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-781" y="155"/>
         </scene>
@@ -40,7 +40,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9781484206485" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-2C-yqu">
                                 <rect key="frame" x="43" y="178.5" width="351" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <color key="textColor" name="BackgroundSearchColor"/>
+                                <color key="textColor" name="subtitleHomeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-c3-z2o">
@@ -83,24 +83,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKm-SR-O5t">
-                                                    <rect key="frame" x="27" y="48.5" width="337" height="15"/>
+                                                    <rect key="frame" x="16" y="37.5" width="348" height="15"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="subtitleHomeColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCG-6j-aTI">
-                                                    <rect key="frame" x="27" y="21" width="337" height="17.5"/>
+                                                    <rect key="frame" x="16" y="15" width="348" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="subtitleHomeColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oKm-SR-O5t" firstAttribute="trailing" secondItem="zCG-6j-aTI" secondAttribute="trailing" id="4Mb-lN-pN9"/>
-                                                <constraint firstItem="zCG-6j-aTI" firstAttribute="leading" secondItem="5t2-Ka-2BF" secondAttribute="leading" constant="27" id="Be1-FC-XCf"/>
-                                                <constraint firstItem="oKm-SR-O5t" firstAttribute="top" secondItem="zCG-6j-aTI" secondAttribute="bottom" constant="10" id="cke-kk-VV9"/>
+                                                <constraint firstItem="zCG-6j-aTI" firstAttribute="leading" secondItem="5t2-Ka-2BF" secondAttribute="leading" constant="16" id="Be1-FC-XCf"/>
+                                                <constraint firstItem="oKm-SR-O5t" firstAttribute="top" secondItem="zCG-6j-aTI" secondAttribute="bottom" constant="5" id="cke-kk-VV9"/>
                                                 <constraint firstAttribute="trailing" secondItem="zCG-6j-aTI" secondAttribute="trailing" constant="20" id="i5D-ps-6XR"/>
-                                                <constraint firstItem="zCG-6j-aTI" firstAttribute="top" secondItem="5t2-Ka-2BF" secondAttribute="top" constant="21" id="jSt-bP-cnk"/>
+                                                <constraint firstItem="zCG-6j-aTI" firstAttribute="top" secondItem="5t2-Ka-2BF" secondAttribute="top" constant="15" id="jSt-bP-cnk"/>
                                                 <constraint firstItem="oKm-SR-O5t" firstAttribute="leading" secondItem="zCG-6j-aTI" secondAttribute="leading" id="qmr-Qj-cRH"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -120,7 +120,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Architecting, Developing, and Administering MongoDB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDd-vA-grF">
                                 <rect key="frame" x="43" y="151.5" width="341" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <color key="textColor" name="BackgroundSearchColor"/>
+                                <color key="textColor" name="subtitleHomeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -170,9 +170,6 @@
         <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="phone" catalog="system" width="128" height="115"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <namedColor name="BackgroundSearchColor">
-            <color red="0.60784313725490191" green="0.64313725490196083" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="subtitleHomeColor">
             <color red="0.22352941176470589" green="0.28235294117647058" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

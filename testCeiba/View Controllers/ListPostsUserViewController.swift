@@ -64,13 +64,29 @@ extension ListPostsUserViewController: UICollectionViewDelegate,UICollectionView
         return 17
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        return CGSize(width: screenWidth-26, height: 150)
+
+        let yourWidthOfLable = self.collectionPosts.frame.size.width
+        let expectedHeightBody = heightForLable(text: self.postsUser[indexPath.row].body, width: yourWidthOfLable-36)   // Margin left 20 || right 16 Constraints
+        let expectedHeighttitle = heightForLable(text: self.postsUser[indexPath.row].title, width: yourWidthOfLable-36) // Margin left 20 || right 16 Constraints
+        return CGSize(width: screenWidth-26, height: expectedHeighttitle+expectedHeightBody+10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+    
+    //MARK: Calculated Height
+    
+    func heightForLable(text:String, width:CGFloat) -> CGFloat {
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+         label.numberOfLines = 0
+         label.lineBreakMode = NSLineBreakMode.byWordWrapping
+         label.text = text
+         label.sizeToFit()
+         return label.frame.height
     }
 }
 

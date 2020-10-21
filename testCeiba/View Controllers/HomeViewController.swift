@@ -22,6 +22,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     var userSelected:User?
 
     var activity = UIActivityIndicatorView(style: .large)
+    var lblTitle = UILabel()
     let localStorage = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -88,6 +89,15 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
         activity.translatesAutoresizingMaskIntoConstraints = false
         activity.centerYAnchor.constraint(equalTo: tableUsers.centerYAnchor,constant: 60).isActive = true
         activity.centerXAnchor.constraint(equalTo: tableUsers.centerXAnchor).isActive = true
+        
+        view.addSubview(lblTitle)
+        lblTitle.translatesAutoresizingMaskIntoConstraints = false
+        lblTitle.centerYAnchor.constraint(equalTo: tableUsers.centerYAnchor,constant: 90).isActive = true
+        lblTitle.centerXAnchor.constraint(equalTo: tableUsers.centerXAnchor).isActive = true
+        lblTitle.text = "Loading..."
+        lblTitle.textAlignment = .center
+        lblTitle.textColor = UIColor.init(named: "subtitleHomeColor")
+        lblTitle.isHidden = true
     }
     
     //MARK: Textfield Delegate
@@ -105,6 +115,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     
     func getCategories(){
         self.activity.startAnimating()
+        lblTitle.isHidden = false
         let jsonUrlstring = "\(baseUrl)/users"
         guard let url = URL(string: jsonUrlstring) else {
             return
@@ -113,6 +124,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
             defer {
                 DispatchQueue.main.async {
                     self.activity.stopAnimating()
+                    self.lblTitle.isHidden = true
                 }
             }
             if err != nil {
@@ -146,6 +158,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     
     func getPostUser(userId:Int){
         self.activity.startAnimating()
+        self.lblTitle.isHidden = false
         let jsonUrlstring = "\(baseUrl)/posts?userId=\(userId)"
         guard let url = URL(string: jsonUrlstring) else {
             return
@@ -154,6 +167,7 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
             defer {
                 DispatchQueue.main.async {
                     self.activity.stopAnimating()
+                    self.lblTitle.isHidden = true
                 }
             }
             if err != nil {
@@ -214,6 +228,8 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
         cell.lblEmail.text = users[indexPath.row].email
         return cell
     }
+    
+    
 }
 
 //MARK: Get ID User
@@ -225,3 +241,4 @@ extension HomeViewController: TablePostCellDelegate {
         self.getPostUser(userId: userId)
     }
 }
+
