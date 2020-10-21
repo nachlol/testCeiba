@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import UIKit
 
 extension UITableView {
@@ -20,7 +19,7 @@ extension UITableView {
         messageLabel.textAlignment = .center
         messageLabel.font = UIFont(name: "Helvetica-Bold", size: 22)
         messageLabel.sizeToFit()
-        messageLabel.backgroundColor = UIColor.init(named: "BackgroundSearchColor")
+        messageLabel.backgroundColor = UIColor.white
         self.backgroundView = messageLabel
         self.separatorStyle = .none
     }

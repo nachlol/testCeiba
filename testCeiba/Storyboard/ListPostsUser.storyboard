@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYk-Nf-5HR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="50B-5s-RzY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W59-Ws-rlC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController modalPresentationStyle="fullScreen" id="nYk-Nf-5HR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TAu-Zx-mOq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="subtitleHomeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Lui-Xc-zy9" kind="relationship" relationship="rootViewController" id="frX-p2-IoN"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-781" y="155"/>
+        </scene>
+        <!--Publicaciones-->
+        <scene sceneID="QGk-dl-9ck">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Lui-Xc-zy9" customClass="ListPostsUserViewController" customModule="testCeiba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qdn-xu-aAO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9781484206485" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-2C-yqu">
+                                <rect key="frame" x="43" y="178.5" width="351" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" name="BackgroundSearchColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-c3-z2o">
+                                <rect key="frame" x="15" y="173.5" width="23" height="25.5"/>
+                                <color key="tintColor" name="subtitleHomeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="ZOn-nw-91g"/>
+                                    <constraint firstAttribute="height" constant="27" id="dQK-XE-fv3"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iza-tv-lQN">
+                                <rect key="frame" x="15" y="147.5" width="23" height="23.5"/>
+                                <color key="tintColor" name="subtitleHomeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="0iG-P8-ncw"/>
+                                    <constraint firstAttribute="height" constant="27" id="vhi-rB-FCu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practical " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcP-bd-9f8">
+                                <rect key="frame" x="10" y="108" width="394" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
+                                <color key="textColor" name="subtitleHomeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a60-Z8-z9y">
+                                <rect key="frame" x="10" y="215" width="394" height="637"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nOt-WS-jNz">
+                                    <size key="itemSize" width="384" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellPost" id="7RG-pV-kT7" customClass="PostsCollectionViewCell" customModule="testCeiba" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="0.0" width="384" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5t2-Ka-2BF">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKm-SR-O5t">
+                                                    <rect key="frame" x="27" y="48.5" width="337" height="15"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCG-6j-aTI">
+                                                    <rect key="frame" x="27" y="21" width="337" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oKm-SR-O5t" firstAttribute="trailing" secondItem="zCG-6j-aTI" secondAttribute="trailing" id="4Mb-lN-pN9"/>
+                                                <constraint firstItem="zCG-6j-aTI" firstAttribute="leading" secondItem="5t2-Ka-2BF" secondAttribute="leading" constant="27" id="Be1-FC-XCf"/>
+                                                <constraint firstItem="oKm-SR-O5t" firstAttribute="top" secondItem="zCG-6j-aTI" secondAttribute="bottom" constant="10" id="cke-kk-VV9"/>
+                                                <constraint firstAttribute="trailing" secondItem="zCG-6j-aTI" secondAttribute="trailing" constant="20" id="i5D-ps-6XR"/>
+                                                <constraint firstItem="zCG-6j-aTI" firstAttribute="top" secondItem="5t2-Ka-2BF" secondAttribute="top" constant="21" id="jSt-bP-cnk"/>
+                                                <constraint firstItem="oKm-SR-O5t" firstAttribute="leading" secondItem="zCG-6j-aTI" secondAttribute="leading" id="qmr-Qj-cRH"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="384" height="128"/>
+                                        <connections>
+                                            <outlet property="lblBody" destination="oKm-SR-O5t" id="zVn-aI-Om8"/>
+                                            <outlet property="lblTitle" destination="zCG-6j-aTI" id="Q9y-wO-Na2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lui-Xc-zy9" id="1Un-ih-XnO"/>
+                                    <outlet property="delegate" destination="Lui-Xc-zy9" id="hmn-Ob-h2e"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Architecting, Developing, and Administering MongoDB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDd-vA-grF">
+                                <rect key="frame" x="43" y="151.5" width="341" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" name="BackgroundSearchColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jq0-2C-yqu" secondAttribute="trailing" constant="20" id="4zW-7X-zbg"/>
+                            <constraint firstItem="iza-tv-lQN" firstAttribute="leading" secondItem="sfZ-2i-bgG" secondAttribute="leading" constant="15" id="6jv-7R-vwR"/>
+                            <constraint firstItem="jq0-2C-yqu" firstAttribute="centerY" secondItem="DBm-c3-z2o" secondAttribute="centerY" id="6km-7o-UJe"/>
+                            <constraint firstAttribute="trailing" secondItem="HcP-bd-9f8" secondAttribute="trailing" constant="10" id="7kS-BZ-ZvK"/>
+                            <constraint firstItem="a60-Z8-z9y" firstAttribute="top" secondItem="jq0-2C-yqu" secondAttribute="bottom" constant="20" id="7sd-qK-yW8"/>
+                            <constraint firstItem="HcP-bd-9f8" firstAttribute="leading" secondItem="sfZ-2i-bgG" secondAttribute="leading" constant="10" id="Bs9-QF-xIf"/>
+                            <constraint firstItem="jq0-2C-yqu" firstAttribute="leading" secondItem="pDd-vA-grF" secondAttribute="leading" id="CCh-Df-gsk"/>
+                            <constraint firstItem="a60-Z8-z9y" firstAttribute="leading" secondItem="sfZ-2i-bgG" secondAttribute="leading" constant="10" id="Jdo-YP-m2V"/>
+                            <constraint firstItem="iza-tv-lQN" firstAttribute="top" secondItem="HcP-bd-9f8" secondAttribute="bottom" constant="13.5" id="Kam-Fu-eps"/>
+                            <constraint firstItem="sfZ-2i-bgG" firstAttribute="trailing" secondItem="a60-Z8-z9y" secondAttribute="trailing" constant="10" id="Qeg-UX-r0w"/>
+                            <constraint firstItem="DBm-c3-z2o" firstAttribute="leading" secondItem="iza-tv-lQN" secondAttribute="leading" id="Ryo-YW-Cgc"/>
+                            <constraint firstItem="sfZ-2i-bgG" firstAttribute="bottom" secondItem="a60-Z8-z9y" secondAttribute="bottom" constant="10" id="TyH-pi-XEE"/>
+                            <constraint firstItem="pDd-vA-grF" firstAttribute="leading" secondItem="DBm-c3-z2o" secondAttribute="trailing" constant="5" id="Yl0-ZQ-cUd"/>
+                            <constraint firstItem="DBm-c3-z2o" firstAttribute="top" secondItem="iza-tv-lQN" secondAttribute="bottom" id="Znn-Xm-8aX"/>
+                            <constraint firstItem="sfZ-2i-bgG" firstAttribute="trailing" secondItem="pDd-vA-grF" secondAttribute="trailing" constant="30" id="b7h-7S-D1Q"/>
+                            <constraint firstItem="pDd-vA-grF" firstAttribute="centerY" secondItem="iza-tv-lQN" secondAttribute="centerY" id="jS0-oF-QOG"/>
+                            <constraint firstItem="HcP-bd-9f8" firstAttribute="top" secondItem="sfZ-2i-bgG" secondAttribute="top" constant="20" id="t1c-VY-YA3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sfZ-2i-bgG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Publicaciones" id="SjT-x4-jEE">
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="yLH-c3-Qas">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="closePost:" destination="Lui-Xc-zy9" id="nyS-L3-7OS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionPosts" destination="a60-Z8-z9y" id="5zW-mI-dcC"/>
+                        <outlet property="lblEmail" destination="pDd-vA-grF" id="mJc-Ty-dg6"/>
+                        <outlet property="lblName" destination="HcP-bd-9f8" id="hpk-bb-NGY"/>
+                        <outlet property="lblPhone" destination="jq0-2C-yqu" id="7CJ-bx-Ohv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dV-0E-3kZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.92753623188406" y="155.35714285714286"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="BackgroundSearchColor">
+            <color red="0.60784313725490191" green="0.64313725490196083" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="subtitleHomeColor">
+            <color red="0.22352941176470589" green="0.28235294117647058" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

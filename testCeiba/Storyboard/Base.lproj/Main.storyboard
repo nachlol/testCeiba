@@ -27,10 +27,11 @@
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         <connections>
+                                            <action selector="searchTextfieldWithTextField:" destination="V3L-BB-5RW" eventType="editingChanged" id="PhI-sM-X9o"/>
                                             <outlet property="delegate" destination="V3L-BB-5RW" id="SyU-CE-LYn"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxD-up-ghD">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxD-up-ghD">
                                         <rect key="frame" x="361" y="5" width="48" height="40"/>
                                         <color key="backgroundColor" name="subtitleHomeColor"/>
                                         <constraints>
@@ -38,9 +39,6 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="buscar"/>
-                                        <connections>
-                                            <action selector="findUser:" destination="V3L-BB-5RW" eventType="touchUpInside" id="RJE-s0-m8v"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="WelcomeColor"/>
@@ -74,7 +72,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wmI-Oh-73W">
                                 <rect key="frame" x="0.0" y="157.5" width="414" height="718.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="V3L-BB-5RW" id="6dt-sU-fhY"/>
                                     <outlet property="delegate" destination="V3L-BB-5RW" id="iT1-Dn-UZQ"/>
@@ -99,11 +97,22 @@
                     <connections>
                         <outlet property="tableUsers" destination="wmI-Oh-73W" id="aPV-3O-nff"/>
                         <outlet property="txtfdSearch" destination="gYD-uS-0mY" id="KfH-sq-PTB"/>
+                        <segue destination="f59-SG-H6V" kind="show" identifier="seguePosts" id="MbI-5S-dpu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rd9-Ua-8oG" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="-35.491071428571423"/>
+        </scene>
+        <!--ListPostsUser-->
+        <scene sceneID="RJl-xe-mAT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListPostsUser" id="f59-SG-H6V" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5q9-4S-aA9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9l-KX-had" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="-86"/>
         </scene>
     </scenes>
     <resources>

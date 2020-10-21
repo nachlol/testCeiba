@@ -17,7 +17,12 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     
     let baseUrl = "https://jsonplaceholder.typicode.com"
     var users:[User] = []
+    var tempUser:[User] = []
+    var postsUser:[Post] = []
+    var userSelected:User?
+
     var activity = UIActivityIndicatorView(style: .large)
+    let localStorage = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +30,13 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getCategories()
+       if let sessionInfo = localStorage.value(forKey:"SavedUser") as? Data {
+            let localUserInfo = try! PropertyListDecoder().decode([User].self, from: sessionInfo)
+            self.users = localUserInfo
+            self.tempUser = self.users
+        }else {
+            getCategories()
+        }
     }
     
     //MARK: Actions
@@ -33,10 +44,30 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
     @IBAction func findUser(_ sender:Any){
         if txtfdSearch.text! == ""{
             alert(message: "Empty Field", title: "Message")
-        }else {
-            print("search")
         }
     }
+    
+    @IBAction func searchTextfield(textField: UITextField) {
+       if textField == txtfdSearch {
+           self.users.removeAll()
+           if textField.text?.count != 0{
+               for user in tempUser {
+                   if let restaurantSearch = textField.text {
+                       let range = user.name.lowercased().range(of: restaurantSearch, options: .caseInsensitive, range: nil, locale: nil)
+                       if range != nil {
+                           self.users.append(user)
+                       }
+                   }
+               }
+           }else{
+               for user in tempUser {
+                   self.users.append(user)
+               }
+           }
+           self.tableUsers.reloadData()
+       }
+    }
+    
     
     //MARK: Functions
     
@@ -94,12 +125,13 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
             guard let data = data else {return}
             do {
                 self.users = try JSONDecoder().decode([User].self, from: data)
-                print(self.users)
+                self.tempUser = self.users
                 DispatchQueue.main.async {
                     self.tableUsers.reloadData()
                     if self.users.count == 0 {
                         self.tableUsers.setEmptyMessage("Users not Found!")
                     } else {
+                        self.localStorage.set(try? PropertyListEncoder().encode(self.users),forKey: "SavedUser")
                         self.tableUsers.restore()
                     }
                 }
@@ -110,6 +142,52 @@ class HomeViewController: UIViewController,UITextFieldDelegate {
             }
         }.resume()
     }
+    
+    
+    func getPostUser(userId:Int){
+        self.activity.startAnimating()
+        let jsonUrlstring = "\(baseUrl)/posts?userId=\(userId)"
+        guard let url = URL(string: jsonUrlstring) else {
+            return
+        }
+        URLSession.shared.dataTask(with: url){(data,response,err) in
+            defer {
+                DispatchQueue.main.async {
+                    self.activity.stopAnimating()
+                }
+            }
+            if err != nil {
+                DispatchQueue.main.async {
+                    if let error = err {
+                        self.alert(message: "\(error.localizedDescription)", title: "Error")
+                    }
+                }
+            }
+            guard let data = data else {return}
+            do {
+                self.postsUser = try JSONDecoder().decode([Post].self, from: data)
+                DispatchQueue.main.async {
+                   self.performSegue(withIdentifier: "seguePosts", sender: nil)
+                }
+            } catch let jsonErr {
+                 DispatchQueue.main.async {
+                    self.alert(message: "\(jsonErr.localizedDescription)", title: "Error")
+                }
+            }
+        }.resume()
+    }
+    
+    //MARK: Segue
+       
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if segue.identifier == "seguePosts" {
+           let destinationNavigationController = segue.destination as! UINavigationController
+           let targetController = destinationNavigationController.topViewController
+           let vc = targetController as! ListPostsUserViewController
+            vc.user = self.userSelected
+            vc.postsUser = self.postsUser
+       }
+   }
 }
 
 //MARK: - Configuration Table Users
@@ -129,10 +207,21 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
         tableView.register(UINib(nibName: "ContentUsers", bundle: nil), forCellReuseIdentifier: "cellContent")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellContent") as! ContentUsersTableViewCell
         cell.selectionStyle = .none
+        cell.delegate = self
+        cell.configure(with: users[indexPath.row].id, index: indexPath)
         cell.lblName.text = users[indexPath.row].name
         cell.lblPhone.text = users[indexPath.row].phone
         cell.lblEmail.text = users[indexPath.row].email
         return cell
     }
+}
+
+//MARK: Get ID User
+
+extension HomeViewController: TablePostCellDelegate {
     
+    func didTapPost(with userId: Int, index: Int) {
+        self.userSelected = self.users[index]
+        self.getPostUser(userId: userId)
+    }
 }
